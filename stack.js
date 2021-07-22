@@ -4,32 +4,40 @@ class Stack {
       maxSize = 10;
     }
     this.maxSize = maxSize;
-    this.container = [];
-  }
-
-  display() {
-    console.log(this.container);
-
-    var str = "";
-    for (var i = 0; i < this.container.length; i++) {
-      str += this.container[i] + " ";
-    }
-    return str;
-  }
-
-  isEmpty() {
-    return this.container.length === 0;
-  }
-
-  isFull() {
-    return this.container.length >= maxSize;
+    this.elements = [];
   }
 
   push(element) {
-    if (this.isFull()) {
+    if (this.elements.length >= this.maxSize) {
       console.log("Stack Overflow!");
       return;
     }
-    this.container.push(element);
+    this.elements.push(element);
+  }
+
+  pop() {
+    if (this.elements.length == 0) {
+      console.log("Stack Underflow!");
+      return;
+    }
+    this.elements.pop();
+  }
+
+  peek() {
+    if (this.elements.length == 0) {
+      return "Stack is empty.";
+    }
+    return this.elements[this.elements.length - 1];
   }
 }
+
+var TumpukanCD = new Stack(3);
+TumpukanCD.push("Harry Potter");
+TumpukanCD.push("Titanic");
+TumpukanCD.push("The Avengers");
+TumpukanCD.push("Batman");
+console.log(TumpukanCD.peek());
+TumpukanCD.pop();
+console.log(TumpukanCD.peek());
+TumpukanCD.pop();
+console.log(TumpukanCD.peek());
