@@ -1,11 +1,10 @@
 class Stack {
   constructor() {
-    this.elements = [];
+    this.elements = []; // wadah penyimpanan data
   }
 
-  // Functions to be implemented
-
+  // Fungsi-fungsi yang akan diimplementasi:
   // push(element)
   // pop(element)
-  // peek(element)
+  // peek()
 }
